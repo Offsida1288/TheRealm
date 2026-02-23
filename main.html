@@ -674,3 +674,55 @@
           </details>
           <details class="faq-item">
             <summary>Who can mint KOK NFTs?</summary>
+            <div class="content">Only the Seat Registrar address can mint. Typically the registrar mints to knights who have claimed a seat. Each token ID is minted once; 16 total in the collection.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>TheRealm · KnightsOfNear (KON) · KOK Collection. Not audited. Use at your own risk.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var KOK = [
+        { name: "Arthur of Near", desc: "Sovereign of the Round Table. One blade to bind them.", rarity: "legendary", power: 98 },
+        { name: "Merlin the Seer", desc: "Oracle of NEAR. Sees across chains.", rarity: "legendary", power: 95 },
+        { name: "Lancelot the Pure", desc: "Champion of the realm. Unbroken in battle.", rarity: "epic", power: 94 },
+        { name: "Guinevere of the Gate", desc: "Keeper of the bridge between NEAR and EVM.", rarity: "epic", power: 90 },
+        { name: "Gawain the Green", desc: "Guardian of the green layer. Staking champion.", rarity: "epic", power: 88 },
+        { name: "Percival the Seeker", desc: "Quest for the grail across L1 and L2.", rarity: "rare", power: 85 },
+        { name: "Tristan the Bound", desc: "Bound to the chain. Loyalty immutable.", rarity: "rare", power: 82 },
+        { name: "Galahad the Virtuous", desc: "Pure of heart. First to the round table.", rarity: "rare", power: 87 },
+        { name: "Bedivere the Marshal", desc: "Marshal of the table. Order in chaos.", rarity: "uncommon", power: 78 },
+        { name: "Kay the Seneschal", desc: "Keeper of the keys. Access control.", rarity: "uncommon", power: 75 },
+        { name: "Bors the Twin", desc: "Dual-chain knight. NEAR and EVM.", rarity: "uncommon", power: 76 },
+        { name: "Ector the Foster", desc: "Raised the king. Guardian of the realm.", rarity: "uncommon", power: 74 },
+        { name: "Lamorak the Bold", desc: "Bold in battle. No rollback.", rarity: "common", power: 70 },
+        { name: "Gareth the Fair", desc: "Fair in governance. One vote, one knight.", rarity: "common", power: 68 },
+        { name: "Agravain the Sharp", desc: "Sharp wit. Smart contract reviewer.", rarity: "common", power: 65 },
+        { name: "Mordred the Shadow", desc: "Shadow of the table. Testnet knight.", rarity: "common", power: 72 }
+      ];
+
+      function escapeHtml(s) {
+        var div = document.createElement("div");
+        div.textContent = s;
+        return div.innerHTML;
+      }
+
+      var gallery = document.getElementById("kok-gallery");
+      if (gallery) {
+        KOK.forEach(function (k, i) {
+          var card = document.createElement("div");
+          card.className = "kok-card";
+          card.innerHTML =
+            "<div class=\"thumb\" aria-hidden=\"true\">#" + i + "</div>" +
+            "<div class=\"info\">" +
+            "<div class=\"name\">" + escapeHtml(k.name) + "</div>" +
+            "<div class=\"desc\">" + escapeHtml(k.desc) + "</div>" +
+            "<span class=\"rarity rarity-" + k.rarity + "\">" + k.rarity + "</span>" +
+            (k.power ? " <span style=\"color: var(--muted); font-size: 0.8rem;\">Power " + k.power + "</span>" : "") +
