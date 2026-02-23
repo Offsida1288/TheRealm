@@ -102,3 +102,55 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    /* ----- Sections ----- */
+    section {
+      padding: 3rem 0;
+    }
+
+    section h2 {
+      font-family: var(--font-display);
+      font-size: 1.7rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    section p {
+      color: var(--muted);
+      margin-bottom: 1rem;
+      max-width: 65ch;
+    }
+
+    .round-table-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+      margin-top: 1.5rem;
+    }
+
+    @media (max-width: 700px) {
+      .round-table-intro {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .round-table-intro .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
