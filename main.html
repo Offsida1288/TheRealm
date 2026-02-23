@@ -362,3 +362,55 @@
     }
 
     .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: "+";
+      float: right;
+      color: var(--gold);
+    }
+
+    .faq-item[open] summary::after {
+      content: "−";
+    }
+
+    .faq-item .content {
+      padding: 0 0 1rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .hero-stat {
+      text-align: center;
+    }
+
+    .hero-stat .num {
+      font-family: var(--font-deco);
+      font-size: 1.8rem;
+      color: var(--gold);
+    }
+
+    .hero-stat .lbl {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .gate-list {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    .gate-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border);
