@@ -310,3 +310,55 @@
     /* ----- Footer ----- */
     footer {
       padding: 2rem 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* ----- Round table visual ----- */
+    .table-visual {
+      width: 100%;
+      max-width: 500px;
+      height: 180px;
+      margin: 1.5rem auto;
+      background: radial-gradient(ellipse 80% 70% at 50% 50%, var(--surface) 0%, var(--bg) 70%);
+      border: 2px solid var(--gold-dim);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-deco);
+      font-size: 1.2rem;
+      color: var(--gold-dim);
+      letter-spacing: 0.1em;
+    }
+
+    /* ----- Accordion for FAQ ----- */
+    .faq-list {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item summary {
+      padding: 1rem 0;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--text);
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker {
