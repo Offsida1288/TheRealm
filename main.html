@@ -726,3 +726,54 @@
             "<div class=\"desc\">" + escapeHtml(k.desc) + "</div>" +
             "<span class=\"rarity rarity-" + k.rarity + "\">" + k.rarity + "</span>" +
             (k.power ? " <span style=\"color: var(--muted); font-size: 0.8rem;\">Power " + k.power + "</span>" : "") +
+            "</div>";
+          gallery.appendChild(card);
+        });
+      }
+
+      document.querySelectorAll(".copy-btn").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var addr = this.getAttribute("data-copy");
+          if (addr && navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(addr).then(function () {
+              btn.textContent = "Copied";
+              setTimeout(function () { btn.textContent = "Copy"; }, 1500);
+            });
+          }
+        });
+      });
+
+      var cta = document.getElementById("cta-connect");
+      if (cta) {
+        cta.addEventListener("click", function () {
+          if (typeof window.ethereum !== "undefined") {
+            window.ethereum.request({ method: "eth_requestAccounts" })
+              .then(function (accs) {
+                cta.textContent = "Connected";
+                if (accs && accs[0]) {
+                  var short = accs[0].slice(0, 6) + "..." + accs[0].slice(-4);
+                  cta.title = accs[0];
+                  cta.textContent = short;
+                }
+              })
+              .catch(function () { cta.textContent = "Connect wallet"; });
+          } else {
+            cta.textContent = "Install MetaMask";
+          }
+        });
+      }
+
+      var CONFIG = {
+        roundTableSeats: 150,
+        kokSize: 16,
+        minStake: "10000",
+        tokenSymbol: "KON",
+        tokenName: "KnightsOfNear"
+      };
+      if (window.CONFIG_REALM) {
+        window.CONFIG_REALM(CONFIG);
+      }
+    })();
+  </script>
+</body>
+</html>
